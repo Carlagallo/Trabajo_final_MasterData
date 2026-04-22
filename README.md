@@ -2,7 +2,7 @@
 # Trabajo_final_MasterData
 
 
-
+“Las variables socioeconómicas están disponibles a nivel anual, por lo que se mantienen constantes dentro de cada año, mientras que las variables climáticas aportan variabilidad mensual.”
 
 ## 📂 Gestión de datos
 
