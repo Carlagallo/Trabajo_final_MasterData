@@ -1,8 +1,4 @@
 # Trabajo_final_MasterData
-# Trabajo_final_MasterData
-
-
-“Las variables socioeconómicas están disponibles a nivel anual, por lo que se mantienen constantes dentro de cada año, mientras que las variables climáticas aportan variabilidad mensual.”
 
 ## 📂 Gestión de datos
 
@@ -52,14 +48,6 @@ Para reproducir el proyecto desde cero:
 
 ---
 
-### 🌐 Fuentes de datos
-
-* Dataset de felicidad: World Happiness Report
-* Datos climáticos: NOAA (Global Historical Climatology Network)
-* Estaciones climaticas 
-
----
-
 ### 💡 Nota técnica
 
 Esta estructura sigue buenas prácticas en proyectos de análisis de datos:
@@ -70,25 +58,9 @@ Esta estructura sigue buenas prácticas en proyectos de análisis de datos:
 
 ---
 
-### Dataset final y tamaño muestral
-
-El conjunto de datos final utilizado para el análisis contiene aproximadamente 23.000 registros y 23 variables, integrando información socioeconómica y climática de múltiples países a lo largo de varios periodos temporales.
-Aunque inicialmente se contempló la posibilidad de ampliar artificialmente el volumen mediante la generación de escenarios simulados, se decidió trabajar exclusivamente con observaciones reales para preservar la integridad metodológica del análisis.
-La referencia inicial de 50.000 registros fue considerada como una orientación general para asegurar suficiente volumen analítico. Sin embargo, el tamaño final del dataset proporciona una base suficientemente robusta para identificar patrones estadísticos, realizar visualizaciones comparativas y construir un dashboard interpretativo con valor analítico.
-Como posible línea futura, el dataset podría ampliarse mediante la incorporación de nuevos escenarios climáticos simulados o una mayor granularidad temporal.
-
-Durante la exportación de los datos a Excel se detectaron problemas en la visualización de variables numéricas, derivados de la interpretación automática de formatos y separadores decimales por parte del software.
-No obstante, los datos originales en el entorno de análisis (Python) se encontraban correctamente estructurados y fueron utilizados para la totalidad del análisis estadístico y visual.
-
-
-
-
-
-
-REVISAR:
-
 
 📊 DATASETS Y FUENTES DE INFORMACIÓN
+
 🧩 Fuentes utilizadas
 Para el desarrollo del proyecto se han utilizado tres fuentes de datos independientes, que posteriormente fueron integradas en un único dataset analítico:
 🌍 1. Dataset de felicidad
@@ -97,30 +69,16 @@ Acceso: https://www.kaggle.com/datasets/unsdsn/world-happiness
 Organización: United Nations Sustainable Development Solutions Network (UN SDSN)
 📌 Descripción:
 Este dataset recoge indicadores de bienestar y calidad de vida a nivel país, incluyendo variables socioeconómicas clave.
-🔑 Variables principales:
-happiness_score
-gdp_per_capita
-social_support
-healthy_life_expectancy
-freedom_to_make_life_choices
-generosity
-perceptions_of_corruption
 🌡️ 2. Dataset climático
 Fuente: NOAA (National Oceanic and Atmospheric Administration)
 Acceso: https://www.ncei.noaa.gov/
-Dataset específico: Global Surface Summary of the Day (GSOD)
-📌 Descripción:
-Contiene registros meteorológicos históricos a nivel global, incluyendo temperatura, precipitación y nieve.
-🔑 Variables utilizadas:
-precip_mm
-SNOW, SNWD
-tmax_c, tmin_c
 🏢 3. Dataset de estaciones meteorológicas
-Fuente: NOAA Stations Metadata
-Acceso: https://www.ncei.noaa.gov/pub/data/noaa/isd-history.csv
+Fuente: Global Historical Climatology Network daily (GHCNd)
+Acceso: https://www.ncei.noaa.gov/
 📌 Descripción:
 Este dataset contiene información sobre las estaciones meteorológicas utilizadas para la recogida de datos climáticos.
-🎯 Uso en el proyecto:
+Para la creacion del diccionario de paises se utilizo la información detallada en la web de GHCNd.
+🎯 Uso en el proyecto
 Identificación y validación de estaciones
 Asociación geográfica de datos climáticos a países
 Filtrado y control de calidad de los datos meteorológicos
@@ -133,8 +91,6 @@ Cálculo de métricas mensuales:
 Temperatura media (temp_mean)
 Rango térmico (temp_range)
 Generación de variables derivadas:
-rain_flag
-snow_flag
 temp_anomaly
 precip_anomaly
 2. Preparación del dataset de felicidad
@@ -155,8 +111,8 @@ Validación de rangos de valores
 Generación de variables derivadas
 📦 DATASET FINAL
 El dataset final presenta:
-~23.000 registros
-23 variables
+13190 registros
+22 variables
 Cobertura internacional
 Datos completamente limpios
 ⚠️ CONSIDERACIONES SOBRE EL TAMAÑO
@@ -166,18 +122,7 @@ El tamaño del dataset se considera adecuado para:
 análisis exploratorio
 identificación de patrones
 construcción de dashboard
-📁 ESTRUCTURA DEL REPOSITORIO
-data/
-├── raw/
-│   ├── happiness.csv
-│   ├── climate_data.csv
-│   ├── stations.csv
-│
-├── processed/
-│   ├── df_final.csv
-🧠 NOTA IMPORTANTE
-Los datos fueron procesados en Python, garantizando la correcta escala de las variables numéricas.
-Para su uso en Excel, se realizó una exportación controlada para evitar problemas de formato.
+
 🎯 DIFERENCIAL DEL PROYECTO
 Este proyecto destaca por:
 Integración de múltiples fuentes heterogéneas
@@ -186,15 +131,6 @@ Generación de variables derivadas relevantes
 Aplicación práctica mediante dashboard
 🚀 CONCLUSIÓN
 La combinación de datos climáticos y socioeconómicos permite analizar la felicidad desde una perspectiva más completa, aportando valor analítico y visual al estudio.
-⚠️ IMPORTANTE (TE DIGO LA VERDAD)
-👉 Revisa que:
-los links coincidan EXACTAMENTE con los que usaste
-los nombres de archivos en tu repo sean iguales
-Si quieres, en el siguiente mensaje puedo:
-👉 revisar tu repo final y dejarte el README perfecto para entregar
-👉 o ayudarte con el guion de defensa
-Estás ya en cierre total 🔥
-
 
 🧠 CONCLUSIONES FINALES
 El presente trabajo ha tenido como objetivo analizar la relación entre las condiciones climáticas y el nivel de felicidad a nivel global, integrando para ello dos fuentes de datos independientes: indicadores socioeconómicos y registros climáticos.
@@ -215,7 +151,7 @@ Por último, la ampliación del dataset mediante la generación de escenarios si
 🚀 Líneas futuras
 Como posibles líneas de investigación futura, sería interesante incorporar datos a mayor granularidad temporal o geográfica, así como explorar variables adicionales relacionadas con aspectos culturales, psicológicos o medioambientales.
 Asimismo, el uso de técnicas de modelización más avanzadas, como modelos predictivos o de aprendizaje automático, podría permitir profundizar en la identificación de los factores que explican la felicidad.
-💥 Cierre potente
+
 En definitiva, los resultados obtenidos sugieren que, si bien el entorno climático puede influir en determinadas condiciones de vida, es el contexto socioeconómico el que desempeña un papel predominante en la construcción del bienestar.
 Este hallazgo refuerza la idea de que las políticas orientadas a mejorar la calidad de vida, la equidad y el acceso a recursos básicos tienen un impacto mucho más significativo en la felicidad de las personas que las condiciones ambientales por sí solas.
 Para su correcta visualización en Excel, se realizó una exportación controlada del dataset, asegurando el formato adecuado de los valores numéricos.
