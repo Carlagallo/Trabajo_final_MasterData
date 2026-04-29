@@ -29,10 +29,36 @@ Se incluyen únicamente datasets procesados y optimizados:
 Estos archivos permiten reproducir los análisis y visualizaciones del proyecto sin necesidad de manejar grandes volúmenes de datos.
 
 ---
+### Estructura del Repositorio
+Trabajo_final_MasterData/
+│
+├── 📁 DATOS/
+│   ├── RAW/
+│   └── OUT/
+│  
+│
+└── 📁 Dashboard/
+│ └── Dashboard_happines/
+│
+├── 📊 notebooks/
+│   ├── Analisis_preliminar.ipynb/
+│ 
+└── 📄Informe del análisis realizado/
+│ 
+├── 📄 requirements.txt
+├── 📄 README.md
+└── 📄 .gitignore
+
+
 
 ### 🔁 Reproducibilidad del proyecto
 
+Este proyecto ha sido desarrollado en un entorno virtual de Python para garantizar la reproducibilidad del análisis.
 Para reproducir el proyecto desde cero:
+Instalar: python -m venv venv
+Activar: source venv/bin/activate
+Una vez activado el entorno, instalar las librerías necesarias:pip install -r requirements.txt
+
 
 1. Obtener los datasets originales desde las fuentes indicadas abajo
 2. Colocarlos en la ruta:
